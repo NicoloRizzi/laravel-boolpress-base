@@ -22,7 +22,7 @@ class InfoUserTableSeeder extends Seeder
             $newInfo->phone = $faker->phoneNumber();
             $newInfo->address = $faker->streetAddress();
             $newInfo->avatar = $faker->imageUrl(200, 200);
+            $newInfo->save();
         }
-        $newInfo->save();
     }
 }
