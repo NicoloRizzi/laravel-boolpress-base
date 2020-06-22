@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * HOME
+ */
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
+
+/**
+ * USERS
+ */
+Route::resource('users', 'UserController');

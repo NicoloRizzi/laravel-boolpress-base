@@ -16,4 +16,11 @@ class InfoUser extends Model
         'avatar',
     ];
     public $timestamps = false;
+
+    /**
+     * DB RELATIONSHIPS
+     */
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
 }
