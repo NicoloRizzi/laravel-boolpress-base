@@ -8,6 +8,15 @@
                 <p><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></p>
                 <div>{{ $user->info['address'] }}</div>
                 <div>{{ $user->info['phone'] }}</div>
+                <h3>Posts</h3>
+                <ul>
+                    @foreach($user->posts as $post)
+                        <li>
+                            <h4>{{ $post->title }}</h4>
+                            <p>{{ $post->body }}</p>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
             @if (! $loop->last)
                     <hr>

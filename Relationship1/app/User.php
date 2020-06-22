@@ -43,4 +43,11 @@ class User extends Authenticatable
     public function info() {
         return $this->hasOne('App\InfoUser');
     }
+
+    /**
+     * DB RELATIONSHIPS WITH POST
+     */
+    public function posts() {
+        return $this->hasMany('App\Post');
+    }
 }
