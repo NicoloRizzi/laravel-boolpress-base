@@ -24,3 +24,8 @@ Route::get('/', function () {
  * USERS
  */
 Route::resource('users', 'UserController');
+
+/**
+ * POST
+ */
+Route::resource('posts', 'PostController');
