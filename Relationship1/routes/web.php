@@ -31,6 +31,6 @@ Route::resource('users', 'UserController');
 Route::resource('posts', 'PostController');
 
 /**
- * REVIEWS
+ * COMMENT
  */
 Route::resource('comment', 'CommentController');

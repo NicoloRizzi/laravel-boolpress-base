@@ -11,5 +11,10 @@ class Comment extends Model
         'post_id',
         'title',
         'body',
-    ]
+    ];
+
+    //RELATIONSHIPS
+    public function commentPost() {
+        return $this->belongsTo('App\Post');
+    }
 }
