@@ -1,6 +1,15 @@
 @extends('layouts.main')
     @section('main-content')
         <h1 class="mb-4">Create a new post</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{route('posts.store')}}" method="POST">
             @csrf
             @method('POST')
@@ -10,9 +19,7 @@
             </div>
             <div class="form-group">
                 <label for="body">Body</label>
-                <textarea class="form-control" name="body" id="body">
-                    {{ old('body')}}
-                </textarea>
+                <textarea class="form-control" name="body" id="body">{{ old('body')}}</textarea>
             </div>
             @foreach ($tags as $tag)
                 <div class="form-check">

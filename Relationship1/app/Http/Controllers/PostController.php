@@ -39,7 +39,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        @dump($request->all());
+        $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'tags.*' => 'exists:tags,id'
+        ]);
     }
 
     /**
