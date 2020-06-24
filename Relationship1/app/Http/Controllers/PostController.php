@@ -91,9 +91,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $tags = Tag::all();
+        return view('posts.edit', compact('post','tags'));
     }
 
     /**
@@ -103,9 +104,28 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        //REFACTORING DUPLICATE
+        $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'tags.*' => 'exists:tags,id'
+        ]);
+
+        $data = $request->all();
+        
+        $updated = $post->update($data);
+
+        if ($updated) {
+            if(!empty($data['tags'])) {
+                $post->tags()->sync($data['tags']);
+            } else {
+                $post->tags()->detach();
+            }
+
+            return redirect()->route('posts.show', $post->slug);
+        }
     }
 
     /**
