@@ -7,7 +7,7 @@
         <h4>{{ $post->user->name }}</h4>
         <h4>Created: {{ $post->created_at }}, Last Modified: {{ $post->updated_at }}</h4>
         <p>{{ $post->body }}</p>
-        <a href="{{ route('posts.show', $post->slug) }}"></a>
+        <a href="{{ route('posts.show', $post->slug) }}">Read more</a>
         @if ($loop->last)
             <hr>
         @endif
