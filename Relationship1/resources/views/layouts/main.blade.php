@@ -1,3 +1,5 @@
 @include('partials.header')
-    @yield('main-content')
+    <main class="container pb-5">
+        @yield('main-content')
+    </main>
 @include('partials.footer')

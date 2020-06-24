@@ -2,7 +2,7 @@
     @section('main-content')
     <h2>Blog Archive</h2>
     @foreach ($posts as $post)
-        <article>
+        <article class="mb-3">
         <h2>{{ $post->title }}</h2>
         <h4>{{ $post->user->name }}</h4>
         <h4>Created: {{ $post->created_at }}, Last Modified: {{ $post->updated_at }}</h4>
@@ -13,6 +13,7 @@
         @endif
         </article>
     @endforeach
-    <h4>Naviagtion</h4>
-    {{ $posts->links() }}
+    <div class="wrap-pagination mt-5 d-flex justify-content-end">
+        {{ $posts->links() }}
+    </div>
     @endsection
