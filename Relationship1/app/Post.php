@@ -11,6 +11,7 @@ class Post extends Model
         'user_id',
         'title',
         'body',
+        'slug',
     ];
 
     /**
@@ -18,12 +19,5 @@ class Post extends Model
      */
     public function user () {
         return $this->belongsTo('App\User');
-    }
-
-    /**
-     * DB RELATIONSHIPS WITH COMMENTS
-     */
-    public function comment () {
-        return $this->hasMany('App\Comment');
     }
 }

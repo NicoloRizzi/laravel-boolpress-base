@@ -29,8 +29,3 @@ Route::resource('users', 'UserController');
  * POST
  */
 Route::resource('posts', 'PostController');
-
-/**
- * COMMENT
- */
-Route::resource('comment', 'CommentController');
