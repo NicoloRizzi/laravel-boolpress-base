@@ -9,11 +9,19 @@
                 <input class="form-control" type="text" value="{{ old('title')}}" name="title" id="title">
             </div>
             <div class="form-group">
-                <label for="title">Body</label>
+                <label for="body">Body</label>
                 <textarea class="form-control" name="body" id="body">
-                    {{ old('body')}}"
+                    {{ old('body')}}
                 </textarea>
             </div>
+            @foreach ($tags as $tag)
+                <div class="form-check">
+                    <input type="checkbox" name="tags[]" id="tag-{{ $loop->iteration }}" value="{{ $tag->id }}">
+                    <label for="tag-{{ $loop->iteration }}">
+                        {{ $tag->name }}
+                    </label>
+                </div>
+            @endforeach
             <input class="btn btn-primary mt-4" type="submit" value="Create Post">
         </form>
 
