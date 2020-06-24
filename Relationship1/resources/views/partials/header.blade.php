@@ -13,11 +13,17 @@
             <a href="{{ route('home') }}" class="navbar-brand">Lara Blog</a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a  class="nav-link" href="{{ route('home') }}">Home</a></li>
+                    <a  class="nav-link" href="{{ route('home') }}">Home</a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('users.index') }}">Users</a></li>
+                    <a class="nav-link" href="{{ route('users.index') }}">Users</a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('posts.index') }}">Archive</a></li>
+                    <a class="nav-link" href="{{ route('posts.index') }}">Archive</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('posts.create') }}">New Post</a>
+                </li>
             </ul>
         </nav>
     </header>
