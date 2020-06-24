@@ -20,4 +20,12 @@ class Post extends Model
     public function user () {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * DB REALATION WITH TAG TABLE
+     * MANY TO MANY
+     */
+    public function tags () {
+        return $this->belongsToMany('App\Tag');
+    }
 }
