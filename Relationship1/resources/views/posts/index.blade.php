@@ -1,5 +1,10 @@
 @extends('layouts.main')
     @section('main-content')
+        @if(session('post-deleted'))
+            <div class="alert alert-success">
+                <p>The following post has been deleted: {{ session('post-deleted') }}</p>
+            </div>
+        @endif
     <h2>Blog Archive</h2>
     @foreach ($posts as $post)
         <article class="mb-3">
